@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col m8 offset-m2 s10 offset-s1 center-align">
+        <label class="size">Nom</label>
+        <input ng-model="name">
+        <label class="size">Numéro</label>
+        <input ng-model="number">
+        <button ng-click="create()">plop</button>
+    </div>
+    <div class="col m8 center-align">
+        <div class="">
+            <table class="table">
+                <tr>
+                    <th>nom</th>
+                    <th>numero</th>
+                </tr>
+                <tr ng-repeat="x in todos">
+                    <td>{{x.name}}</td>
+                    <td>{{x.number}}</td>
+                    update(x._id,x)
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
