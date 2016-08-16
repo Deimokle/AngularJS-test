@@ -4,6 +4,10 @@ function routes($routeProvider) {
             templateUrl: 'views/index.html',
             controller: 'mainController'
         })
+        .when('/combat', {
+            templateUrl: 'views/combat.html',
+            controller: 'combatController'
+        })
         .otherwise({
             redirectTo: '/'
         })
