@@ -1,8 +1,12 @@
 import mongoose from 'mongoose';
 
 const todoSchema = new mongoose.Schema({
-    name: String,
-    number: Number
+    nom: String,
+    vie: Number,
+    date: Date,
+    cat: String,
+    pc: Number,
+    exp: Number
 });
 
 let model = mongoose.model('Todo', todoSchema);
@@ -31,8 +35,12 @@ export default class Todo {
 
     create(req, res) {
         model.create({
-                name: req.body.name,
-                number: req.body.number
+                nom: req.body.nom,
+                vie: req.body.vie,
+                date: req.body.date,
+                cat: req.body.cat,
+                pc: req.body.pc,
+                exp: req.body.exp
             },
             (err, todo) => {
                 if (err) {
@@ -47,8 +55,12 @@ export default class Todo {
         model.update({
             _id: req.params.id
         }, {
-            name: req.body.name,
-            number: req.body.number
+            nom: req.body.nom,
+            vie: req.body.vie,
+            date: req.body.date,
+            cat: req.body.cat,
+            pc: req.body.pc,
+            exp: req.body.exp
         }, (err, todo) => {
             if (err || !todo) {
                 res.status(500).send(err.message);

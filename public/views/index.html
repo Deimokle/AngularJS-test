@@ -1,24 +1,54 @@
 <div class="row">
+    <div class="fixed-action-btn horizontal" style="bottom: 25px; right: 24px;">
+        <a class="btn-floating btn-large red">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+        </ul>
+    </div>
     <div class="col m8 offset-m2 s10 offset-s1 center-align">
         <label class="size">Nom</label>
-        <input ng-model="name">
-        <label class="size">Numéro</label>
-        <input ng-model="number">
-        <button ng-click="create()">plop</button>
+        <input ng-model="nom">
+        <label class="size">Vie</label>
+        <input ng-model="vie">
+        <div input-field>
+            <select ng-model="cat" material-select multiple watch>
+                <option ng-repeat="element in cat">{{element}}</option>
+            </select>
+            <label class="size">Categories</label>
+        </div>
+        <label class="size">Points de competence</label>
+        <input ng-model="pc">
+        <label class="size">Experience</label>
+        <input ng-model="exp">
+        <button class="btn waves-effect waves-light" type="submit" ng-click="create()">Enregistrer
+    <i class="material-icons right">send</i>
+  </button>
     </div>
-    <div class="col m8 center-align">
-        <div class="">
+    <div class="col m12 center-align space_top">
             <table class="table">
                 <tr>
-                    <th>nom</th>
-                    <th>numero</th>
+                    <th>Nom</th>
+                    <th>Date de capture</th>
+                    <th>Categorie</th>
+                    <th>Vie</th>
+                    <th>PC</th>
+                    <th>Experience</th>
                 </tr>
                 <tr ng-repeat="x in todos">
-                    <td>{{x.name}}</td>
-                    <td>{{x.number}}</td>
-                    update(x._id,x)
+                    <td><input ng-model="x.nom"></td>
+                    <td>{{x.date | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                    <td>{{x.cat}}</td>
+                    <td>{{x.vie}}</td>
+                    <td>{{x.pc}}</td>
+                    <td>{{x.exp}}</td>
+                    <td><button type="button" ng-click="update(x._id,x)">Modifier</button></td>
+                    <td><button type="button" ng-click="delete(x._id)">Supprimer</button></td>
                 </tr>
             </table>
-        </div>
     </div>
 </div>
