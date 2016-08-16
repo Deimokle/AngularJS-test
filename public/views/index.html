@@ -10,15 +10,18 @@
             <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
         </ul>
     </div>
-    <div class="input-fieldcol m8 offset-m2 s10 offset-s1 center-align">
+    <div class="col m8 offset-m2 s10 offset-s1 center-align">
         <label class="size">Nom</label>
         <input ng-model="nom">
         <label class="size">Vie</label>
         <input ng-model="vie">
         <label class="size">Date</label>
         <input ng-model="date">
-        <input ng-model="cat">
-        <label class="size">Categorie</label>
+        <div input-field>
+            <select ng-model="cat" material-select multiple watch>
+                <option ng-repeat="element in cat">{{element}}</option>
+            </select>
+        </div>
         <label class="size">Points de competence</label>
         <input ng-model="pc">
         <label class="size">Experience</label>
@@ -27,10 +30,9 @@
     <i class="material-icons right">send</i>
   </button>
     </div>
-    <div class="col m8 offset-m2 center-align space_top">
+    <div class="col m12 center-align space_top">
             <table class="table">
                 <tr>
-                    <th>Image</th>
                     <th>Nom</th>
                     <th>Date de capture</th>
                     <th>Categorie</th>
@@ -39,15 +41,15 @@
                     <th>Experience</th>
                 </tr>
                 <tr ng-repeat="x in todos">
-                    <td><input ng-model="x.name"></td>
-                    <td><input ng-model="x.number"></td>
+                    <td><input ng-model="x.nom"></td>
+                    <td>{{x.date}}</td>
+                    <td>{{x.cat}}</td>
+                    <td>{{x.vie}}</td>
+                    <td>{{x.pc}}</td>
+                    <td>{{x.exp}}</td>
                     <td><button type="button" ng-click="update(x._id,x)">Modifier</button></td>
                     <td><button type="button" ng-click="delete(x._id)">Supprimer</button></td>
                 </tr>
             </table>
     </div>
 </div>
-
-<!-- <script type="text/javascript">$(document).ready(function() {
-    $('select').material_select();
-  });</script> -->
