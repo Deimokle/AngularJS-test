@@ -18,8 +18,8 @@
             <label class="size">1er Pokemon</label>
         </div>
         <div input-field>
-            <select ng-model="pok2" material-select multiple watch>
-                <option ng-repeat="x in todos">{{x}}</option>
+            <select material-select multiple watch>
+                <option ng-model="pok2" ng-repeat="x in todos">{{x}}</option>
             </select>
             <label class="size">2eme Pokemon</label>
         </div>
@@ -28,6 +28,7 @@
             <i class="material-icons right">send</i>
         </button>
     </div>
+    {{todos[0]}}
     <div class="col m12 center-align space_top">
             <table class="table">
                 <tr>

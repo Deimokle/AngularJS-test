@@ -6,8 +6,7 @@ function combatController($scope, combatService, todoService){
     $scope.date=new Date(),'yyyy-MM-dd HH:mm:ss Z';
 
     $scope.create = function(){
-        $scope.win = $scope.pok1;
-        combatService.create({win:$scope.win, date:$scope.date, pok1:push($scope.pok1), pok2:$scope.pok2})
+        combatService.create({win:$scope.pok1, date:$scope.date, pok1:$scope.pok1, pok2:$scope.pok2})
         .then(function(){
             $scope.getAll();
         })
