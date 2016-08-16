@@ -7,8 +7,12 @@ function todoService($http) {
 
         create(data) {
             return $http.post('/api/todos', {
-                name: data.name,
-                number: data.number
+                nom: data.nom,
+                vie: data.vie,
+                date: data.date,
+                cat: data.cat,
+                pc: data.pc,
+                exp: data.exp
             })
         },
 
@@ -18,8 +22,12 @@ function todoService($http) {
 
         update(id, data) {
             return $http.put('/api/todos/' + id, {
-                name: data.name,
-                number: data.number
+                nom: data.nom,
+                vie: data.vie,
+                date: data.date,
+                cat: data.cat,
+                pc: data.pc,
+                exp: data.exp
             })
         },
 

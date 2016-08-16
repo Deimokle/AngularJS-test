@@ -1,10 +1,12 @@
 function mainController($scope, todoService){
     $scope.nom="";
     $scope.vie="";
-    $scope.date="";
+    $scope.date=new Date(),'yyyy-MM-dd HH:mm:ss Z';
     $scope.cat=["Feu", "Eau", "Roche"];
+    $scope.elem="";
     $scope.pc="";
     $scope.exp="";
+
 
     $scope.create = function(){
         todoService.create({nom:$scope.nom, vie:$scope.vie, date:$scope.date, cat:$scope.cat, pc:$scope.pc, exp:$scope.exp})

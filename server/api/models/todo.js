@@ -4,7 +4,7 @@ const todoSchema = new mongoose.Schema({
     nom: String,
     vie: Number,
     date: Date,
-    cat: Array,
+    cat: String,
     pc: Number,
     exp: Number
 });

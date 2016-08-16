@@ -15,12 +15,11 @@
         <input ng-model="nom">
         <label class="size">Vie</label>
         <input ng-model="vie">
-        <label class="size">Date</label>
-        <input ng-model="date">
         <div input-field>
             <select ng-model="cat" material-select multiple watch>
                 <option ng-repeat="element in cat">{{element}}</option>
             </select>
+            <label class="size">Categories</label>
         </div>
         <label class="size">Points de competence</label>
         <input ng-model="pc">
@@ -42,7 +41,7 @@
                 </tr>
                 <tr ng-repeat="x in todos">
                     <td><input ng-model="x.nom"></td>
-                    <td>{{x.date}}</td>
+                    <td>{{x.date | date:'yyyy-MM-dd HH:mm:ss'}}</td>
                     <td>{{x.cat}}</td>
                     <td>{{x.vie}}</td>
                     <td>{{x.pc}}</td>
