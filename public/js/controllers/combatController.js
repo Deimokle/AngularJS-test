@@ -1,11 +1,10 @@
 function combatController($scope, combatService, todoService){
- // debugger;
+  debugger;
     $scope.win="";
-    $scope.pok1=[];
-    $scope.pok2=[];
     $scope.date=new Date(),'yyyy-MM-dd HH:mm:ss Z';
 
     $scope.create = function(){
+    console.table($scope.pok1, $scope.pok2);
         combatService.create({win:$scope.pok1, date:$scope.date, pok1:$scope.pok1, pok2:$scope.pok2})
         .then(function(){
             $scope.getAll();

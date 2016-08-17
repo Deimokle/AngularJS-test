@@ -11,24 +11,33 @@
         </ul>
     </div>
     <div class="col m8 offset-m2 s10 offset-s1 center-align">
-        <div input-field>
-            <select ng-model="pok1" material-select multiple watch>
+        <!-- <div input-field>
+            <select ng-model="todos" material-select multiple watch>
                 <option ng-repeat="x in todos">{{x.nom}}</option>
             </select>
             <label class="size">1er Pokemon</label>
+        </div> -->
+        <div input-field>
+            <select ng-model="pok1" material-select watch>
+                <option ng-repeat="x in todos" name="{{x.nom}}" value="{{x._id}}">
+                    {{x.nom}}
+                </option>
+            </select>
+            <label>1 poke</label>
         </div>
         <div input-field>
-            <select material-select multiple watch>
-                <option ng-model="pok2" ng-repeat="x in todos">{{x}}</option>
+            <select ng-model="pok2" material-select watch>
+                <option ng-repeat="x in todos" name="{{x.nom}}" value="{{x._id}}">
+                    {{x.nom}}
+                </option>
             </select>
-            <label class="size">2eme Pokemon</label>
+            <label>2 poke</label>
         </div>
 
         <button class="btn waves-effect waves-light" type="submit" ng-click="create()">Enregistrer
             <i class="material-icons right">send</i>
         </button>
     </div>
-    {{todos[0]}}
     <div class="col m12 center-align space_top">
             <table class="table">
                 <tr>
